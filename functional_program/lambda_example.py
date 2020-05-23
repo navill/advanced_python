@@ -26,6 +26,26 @@ print(reduce(lambda a, b: a + b, [2, 2, 2]))
 print(reduce(lambda a, b: a + b, range(100)))
 # 4950
 
+sequence = filter(
+    lambda square: square % 3 == 0 and square % 2 == 1,
+    map(
+        lambda number: number ** 2,
+        count()
+    )
+)
 
-sec = filter(lambda square: square % 3 == 0 and square % 2 == 1, map(lambda num: num ** 2, count()))
-print([next(sec) for _ in range(10)])
+# 위와 동일한 코드 - generator expressions
+# sequence = (
+#     square for square
+#     in (number ** 2 for number in count())
+#     if square % 3 == 0 and square % 2 == 1
+# )
+
+print([next(sequence) for _ in range(10)])
+# [9, 81, 225, 441, 729, 1089, 1521, 2025, 2601, 3249]
+
+
+# 무한 루프
+def sq(square, square2):
+    if square % 3 == 0 and square % 2 == 1:
+        return square
