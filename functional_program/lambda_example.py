@@ -43,3 +43,14 @@ sequence = filter(
 
 print([next(sequence) for _ in range(10)])
 # [9, 81, 225, 441, 729, 1089, 1521, 2025, 2601, 3249]
+
+for number in range(1):
+    break
+else:
+    print("no break!")
+
+for number in range(1):
+    pass
+else:
+    print("no break?")
+# no break?
