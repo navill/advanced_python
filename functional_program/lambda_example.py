@@ -43,9 +43,3 @@ sequence = filter(
 
 print([next(sequence) for _ in range(10)])
 # [9, 81, 225, 441, 729, 1089, 1521, 2025, 2601, 3249]
-
-
-# 무한 루프
-def sq(square, square2):
-    if square % 3 == 0 and square % 2 == 1:
-        return square
