@@ -236,3 +236,53 @@ def synchronized(function):
 @synchronized
 def thread_safe():  # make sure it locks the resource
     pass
+
+
+# context manager protocol
+class ContextIllustration:
+    def __enter__(self):
+        # try
+        print('entering context')
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        # finally
+        print('leaving context')
+        if exc_type is None:
+            print('with no error')
+        else:
+            print(f'with an error ({exc_type})')
+
+
+with ContextIllustration():
+    print('inside')
+    """
+    # output
+    entering context
+    inside
+    leaving context
+    with no error
+    """
+
+print()
+
+from contextlib import contextmanager
+
+
+@contextmanager
+def context_illustration():
+    print('entering context')
+
+    try:
+        yield
+    except Exception as e:
+        print('leaving context')
+        print(f'with an error ({e})')
+        # exception needs to be reraised
+        raise
+    else:
+        print('leaving context')
+        print('with no error')
+
+
+with context_illustration():
+    print('inside')
