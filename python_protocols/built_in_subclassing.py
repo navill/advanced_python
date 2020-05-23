@@ -11,10 +11,7 @@ class distinctdict(UserDict):
 
     def __setitem__(self, key: Hashable, value: Any) -> None:
         if value in self.values():
-            if (
-                    (key in self and self[key] != value) or
-                    key not in self
-            ):
+            if (key in self and self[key] != value) or (key not in self):
                 raise DistinctError(
                     "This value already exists for different key"
                 )
@@ -39,12 +36,15 @@ class Folder(UserList):
 
     def dir(self, nesting: int = 0) -> None:
         offset = "  " * nesting
+        # print root folder
         print('%s%s/' % (offset, self.name))
 
         for element in self:
             if hasattr(element, 'dir'):
+                # print nested folder
                 element.dir(nesting + 1)
             else:
+                # print file
                 print("%s  %s" % (offset, element))
 
 
@@ -63,5 +63,3 @@ tree.remove(src)
 tree.dir()
 # project/
 #   README.md
-
-print()
