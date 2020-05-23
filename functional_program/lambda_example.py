@@ -1,0 +1,31 @@
+import math
+from itertools import count
+
+lm = lambda radius: math.pi * radius ** 2
+
+# lambda 식을 변수에 할당하고 이를 함수처럼 사용할 수 있다.
+print(lm(10))
+print(map(lambda x: x ** 2, range(10)))
+# <map object at 0x10ea09cf8>
+
+print(list(map(lambda x: x ** 2, range(10))))
+# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+
+evens = filter(lambda number: number % 2 == 0, range(10))
+odds = filter(lambda number: number % 2 != 0, range(10))
+print(list(evens))
+print(list(odds))
+
+from functools import reduce
+
+print(reduce(lambda a, b: a + b, [2, 2]))
+# 4
+print(reduce(lambda a, b: a + b, [2, 2, 2]))
+# 6
+print(reduce(lambda a, b: a + b, range(100)))
+# 4950
+
+
+sec = filter(lambda square: square % 3 == 0 and square % 2 == 1, map(lambda num: num ** 2, count()))
+print([next(sec) for _ in range(10)])
