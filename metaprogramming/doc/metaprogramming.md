@@ -140,11 +140,11 @@ print(cl2.var)
 
 - meta class: 다른 클래스를 정의하기 위해 사용되는 클래스
 
-  ![image1](/스크린샷 2020-05-25 오후 8.53.47.png)
+  ![image1](image1.png)
 
   type(class) → class 생성 → instance 생성
 
-![image2](/스크린샷 2020-05-25 오후 9.08.27.png)
+![image2](image2.png)
 
 class 를 정의하기 위한 metaclass는 type의 subclass
 
