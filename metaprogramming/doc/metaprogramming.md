@@ -140,11 +140,11 @@ print(cl2.var)
 
 - meta class: 다른 클래스를 정의하기 위해 사용되는 클래스
 
-  ![스크린샷 2020-05-25 오후 8.53.47](/Users/jh/Desktop/Python/advanced/metaprogramming/doc/스크린샷 2020-05-25 오후 8.53.47.png)
+  ![image1](/스크린샷 2020-05-25 오후 8.53.47.png)
 
   type(class) → class 생성 → instance 생성
 
-![스크린샷 2020-05-25 오후 9.08.27](/Users/jh/Desktop/Python/advanced/metaprogramming/doc/스크린샷 2020-05-25 오후 9.08.27.png)
+![image2](/스크린샷 2020-05-25 오후 9.08.27.png)
 
 class 를 정의하기 위한 metaclass는 type의 subclass
 
