@@ -33,14 +33,18 @@ def test_func() -> None:
 # test_func()
 
 # int instance를 생성하기 전 new 메서드를 이용해 객체 생성 조건을 설정
+NonZeroCls = NewType('NonZero', int)
+
+
 class NonZero(int):
-    def __new__(cls, value):
+    def __new__(cls, value: int) -> NonZeroCls:
         return super().__new__(cls, value) if value != 0 else None
 
-    def __init__(self, skipped_value):
+    def __init__(self, skipped_value: int) -> None:
         # implementation of __init__ could be skipped in this case
         # but it is left to present how it may be not called
         print("__init__() called")
+        print(f"skipped value:{skipped_value}")
         super().__init__()  # int(Integer class)를 상속받기 때문에 super().__init__() 필요함
 
 
