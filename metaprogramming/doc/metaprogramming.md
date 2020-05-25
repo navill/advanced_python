@@ -264,3 +264,36 @@ print(MyClass.__mro__)
   
   """
   ```
+  
+  
+  
+  - \_\_prepare\_\_() 예시
+  
+  ``` python
+  from collections import OrderedDict 
+   
+   
+  class OrderedMeta(type): 
+      @classmethod 
+      def __prepare__(cls, name, bases, **kwargs): 
+          return OrderedDict()  
+  
+      def __new__(mcs, name, bases, namespace): 
+          namespace['order_of_attributes'] = list(namespace.keys()) 
+          return super().__new__(mcs, name, bases, namespace) 
+  # __prepare__()에서 빈 OrderedDict() 반환 -> __new__의 namespace에 전달
+  # -> __new__()에서 namespace에 'order_of_attributes' 추가
+   
+  class ClassWithOrder(metaclass=OrderedMeta): 
+      first = 8  # class가 생성되면서 __dir__에는 order_of_attributes, first, second가 추가됨
+      second = 2
+  
+  >>> ClassWithOrder.order_of_attributes 
+  ['__module__', '__qualname__', 'first', 'second'] 
+  >>> ClassWithOrder.__dict__.keys() 
+  dict_keys(['__dict__', 'first', '__weakref__', 'second', 
+  'order_of_attributes', '__module__', '__doc__'])
+  ```
+  
+  
+
