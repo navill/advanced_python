@@ -69,15 +69,14 @@ class RevealingClass(metaclass=RevealingMeta):
         super().__init__()
 
 
-inst = RevealingClass()
-
-
 class SameRevealingClass:
     var = 0
 
     def __init__(self):
         self.a = 10
 
+
+inst = RevealingClass()
 
 print(dir(inst))
 print(inst.a, inst.var)
