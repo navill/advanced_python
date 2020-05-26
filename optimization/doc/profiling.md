@@ -169,8 +169,8 @@ Tue May 26 16:52:43 2020    /var/folders/p8/7tt65m7j1pn0vvwpjgb0n5wh0000gn/T/tmp
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
       201    4.344    0.022    4.344    0.022 {built-in method time.sleep}
-      200    0.002    0.000    2.344    0.012 .../optimization/profiling.py:43(medium)
-        1    0.002    0.002    4.348    4.348 .../optimization/profiling.py:47(heavy)
+      200    0.002    0.000    2.344    0.012 .../optimization/macro_profiling.py:43(medium)
+        1    0.002    0.002    4.348    4.348 .../optimization/macro_profiling.py:47(heavy)
 
 
 ===== heavy() profile =====
@@ -183,8 +183,8 @@ Tue May 26 16:52:47 2020    /var/folders/p8/7tt65m7j1pn0vvwpjgb0n5wh0000gn/T/tmp
 
    ncalls  tottime  percall  cumtime  percall filename:lineno(function)
       201    4.352    0.022    4.352    0.022 {built-in method time.sleep}
-      200    0.002    0.000    2.352    0.012 .../optimization/profiling.py:43(medium)
-        1    0.002    0.002    4.356    4.356 .../optimization/profiling.py:47(heavy)
+      200    0.002    0.000    2.352    0.012 .../optimization/macro_profiling.py:43(medium)
+        1    0.002    0.002    4.356    4.356 .../optimization/macro_profiling.py:47(heavy)
 
 
 ===== main() profile =====

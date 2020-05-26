@@ -1,27 +1,10 @@
-import pstats
-import cProfile
-from optimization.myapp import main
-
-
-# macro-profile: 프로그램(앱) 전체를 실행시켜 성능 측정
-
-
-# stats.total_calls
-def profile_test():
-    profile_ = cProfile.run('main()', 'myapp.stats')
-    stats = pstats.Stats('myapp.stats')
-    stats.sort_stats('time').print_stats(3)
-    stats.print_callees('medium')
-    stats.print_callees('light')
-
-
-# micro-profile: 프로그램의 일부(코드)를 실행시켜 성능 측정
 import time
 import tempfile
 import cProfile
 import pstats
 
 
+# micro-profile: 프로그램의 일부(코드)를 실행시켜 성능 측정
 def profile(column='time', list=3):
     def parametrized_decorator(function):
         def decorated(*args, **kw):
