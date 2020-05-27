@@ -111,6 +111,10 @@ $ gprof2dot -f pstats myapp.stats | dot -Tpng -o output.png
 
 
 
+
+
+### Micro-profiling: 프로그램(코드) 일부의 성능을 검사
+
 ```python
 import time
 import tempfile
